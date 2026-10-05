@@ -398,23 +398,29 @@ var breeze_prefetch = {"local_url":"/","ignore_remote_prefetch":"1","ignore_list
 <div class="wpcf7 no-js" id="wpcf7-f458-p178-o1" lang="en-US" dir="ltr" data-wpcf7-id="458">
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
 <form action="/contact-us/#wpcf7-f458-p178-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
-<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="458" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f458-p178-o1" /><input type="hidden" name="_wpcf7_container_post" value="178" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" /><input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="458" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f458-p178-o1" /><input type="hidden" name="_wpcf7_container_post" value="178" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
 </fieldset>
 <p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" autocomplete="name" aria-required="true" aria-invalid="false" placeholder="Name*" value="" type="text" name="your-name" /></span><br />
 <span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-required="true" aria-invalid="false" placeholder="Email*" value="" type="email" name="your-email" /></span><br />
 <span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone*" value="" type="tel" name="your-phone" /></span><br />
-<span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message" name="your-message"></textarea></span><br />
-<span class="wpcf7-form-control-wrap recaptcha" data-name="recaptcha"><span data-sitekey="6Lc0IjEpAAAAAC1lnWxXXc21f9ofx9DqYg6DdGc_" class="wpcf7-form-control wpcf7-recaptcha g-recaptcha"></span>
-<noscript>
-	<div class="grecaptcha-noscript">
-		<iframe src="https://www.google.com/recaptcha/api/fallback?k=6Lc0IjEpAAAAAC1lnWxXXc21f9ofx9DqYg6DdGc_" frameborder="0" scrolling="no" width="310" height="430">
-		</iframe>
-		<textarea name="g-recaptcha-response" rows="3" cols="40" placeholder="reCaptcha Response Here">
-		</textarea>
-	</div>
-</noscript>
-</span>
-</p>
+<span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message" name="your-message"></textarea></span></p>
+
+<div class="custom-captcha-wrapper" style="margin: 15px 0 20px 0;">
+  <label style="display: block; font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 8px;">Security Verification *</label>
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;">
+    <canvas id="customCaptchaCanvas" width="160" height="48" style="background: linear-gradient(135deg, #0a192f 0%, #1e3a8a 100%); border-radius: 8px; box-shadow: 0 4px 12px rgba(13, 38, 215, 0.15); cursor: pointer;" title="Click to refresh code"></canvas>
+    <button type="button" id="refreshCaptchaBtn" title="Get new code" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; transition: background 0.2s;">🔄</button>
+    <span style="font-size: 12px; color: #64748b;">Click 🔄 or image to refresh code</span>
+  </div>
+  <span class="wpcf7-form-control-wrap" data-name="captcha-code">
+    <input size="40" maxlength="10" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="customCaptchaInput" autocomplete="off" aria-required="true" placeholder="Enter the code shown above *" type="text" name="captcha-code" style="max-width: 380px; width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; padding: 12px 16px; font-size: 14px;" />
+  </span>
+  <div id="captchaError" style="display: none; color: #dc2626; font-size: 13px; margin-top: 6px; font-weight: 500;"></div>
+  <div id="formSuccessToast" style="display: none; background: #ecfdf5; border: 1px solid #10b981; color: #065f46; padding: 14px 18px; border-radius: 8px; margin-top: 15px; font-size: 14px; font-weight: 500;">
+    ✓ Thank you! Your message has been received successfully. Our team will contact you shortly.
+  </div>
+</div>
+
 <p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Submit" />
 </p><p style="display: none !important;" class="akismet-fields-container" data-prefix="_wpcf7_ak_"><label>&#916;<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="_wpcf7_ak_js" value="0"/><script>
 document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );
@@ -695,12 +701,170 @@ var ekit_config = {"ajaxurl":"/wp-admin/admin-ajax.php","nonce":"b7eafe05d9"};
 </script>
 <script id="ekit-core-js" src="/assets/content/plugins/elementskit-lite/widgets/init/assets/js/widgets/core.js?ver=3.10.02"></script>
 <script id="ekit-nav-menu-js" src="/assets/content/plugins/elementskit-lite/widgets/init/assets/js/widgets/nav-menu.js?ver=3.10.02"></script>
-<script id="wpcf7-recaptcha-controls-js" src="/assets/content/plugins/wpcf7-recaptcha/assets/js/wpcf7-recaptcha-controls.js?ver=1.2"></script>
-<script id="google-recaptcha-js-extra">
-var wpcf7iqfix = {"recaptcha_empty":"Please verify that you are not a robot.","response_err":"wpcf7-recaptcha: Could not verify reCaptcha response."};
-//# sourceURL=google-recaptcha-js-extra
+
+<script id="custom-captcha-script">
+(function() {
+  const canvas = document.getElementById("customCaptchaCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const input = document.getElementById("customCaptchaInput");
+  const refreshBtn = document.getElementById("refreshCaptchaBtn");
+  const errorDiv = document.getElementById("captchaError");
+  const successDiv = document.getElementById("formSuccessToast");
+  const form = canvas.closest("form");
+
+  let currentCaptcha = "";
+
+  function generateCaptcha() {
+    const chars = "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz";
+    let code = "";
+    for (let i = 0; i < 5; i++) {
+      code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    currentCaptcha = code;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Gradient background
+    const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    grad.addColorStop(0, "#081325");
+    grad.addColorStop(1, "#172554");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Noise lines
+    for (let i = 0; i < 4; i++) {
+      ctx.strokeStyle = ["#38bdf8", "#818cf8", "#34d399", "#f472b6"][i % 4];
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.bezierCurveTo(
+        Math.random() * canvas.width, Math.random() * canvas.height,
+        Math.random() * canvas.width, Math.random() * canvas.height,
+        Math.random() * canvas.width, Math.random() * canvas.height
+      );
+      ctx.stroke();
+    }
+
+    // Noise dots
+    for (let i = 0; i < 40; i++) {
+      ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
+      ctx.beginPath();
+      ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 1.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Characters
+    const charSpacing = canvas.width / (code.length + 1);
+    for (let i = 0; i < code.length; i++) {
+      ctx.save();
+      const x = (i + 0.8) * charSpacing;
+      const y = canvas.height / 2 + 7;
+      const angle = (Math.random() - 0.5) * 0.35;
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+      ctx.font = "bold 23px sans-serif";
+      ctx.fillStyle = ["#ffffff", "#38bdf8", "#a7f3d0", "#fbcfe8"][i % 4];
+      ctx.shadowColor = "rgba(0, 0, 0, 0.8)";
+      ctx.shadowBlur = 4;
+      ctx.fillText(code[i], -8, 0);
+      ctx.restore();
+    }
+
+    if (errorDiv) {
+      errorDiv.style.display = "none";
+      errorDiv.textContent = "";
+    }
+    if (input) {
+      input.value = "";
+      input.style.borderColor = "#cbd5e1";
+    }
+  }
+
+  generateCaptcha();
+
+  if (refreshBtn) refreshBtn.addEventListener("click", generateCaptcha);
+  if (canvas) canvas.addEventListener("click", generateCaptcha);
+
+  if (form) {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+
+      const nameInput = form.querySelector('[name="your-name"]');
+      const emailInput = form.querySelector('[name="your-email"]');
+      const phoneInput = form.querySelector('[name="your-phone"]');
+
+      let hasError = false;
+
+      if (nameInput) {
+        if (!nameInput.value.trim()) {
+          nameInput.style.borderColor = "#ef4444";
+          hasError = true;
+        } else {
+          nameInput.style.borderColor = "#cbd5e1";
+        }
+      }
+
+      if (emailInput) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput.value.trim() || !emailPattern.test(emailInput.value.trim())) {
+          emailInput.style.borderColor = "#ef4444";
+          hasError = true;
+        } else {
+          emailInput.style.borderColor = "#cbd5e1";
+        }
+      }
+
+      if (phoneInput) {
+        if (!phoneInput.value.trim()) {
+          phoneInput.style.borderColor = "#ef4444";
+          hasError = true;
+        } else {
+          phoneInput.style.borderColor = "#cbd5e1";
+        }
+      }
+
+      const entered = (input ? input.value : "").trim();
+      if (!entered || entered.toLowerCase() !== currentCaptcha.toLowerCase()) {
+        if (errorDiv) {
+          errorDiv.style.display = "block";
+          errorDiv.textContent = "Please enter the correct verification code shown above.";
+        }
+        if (input) {
+          input.style.borderColor = "#ef4444";
+          input.focus();
+        }
+        generateCaptcha();
+        return false;
+      }
+
+      if (hasError) {
+        if (errorDiv) {
+          errorDiv.style.display = "block";
+          errorDiv.textContent = "Please fill out all required fields marked with *.";
+        }
+        return false;
+      }
+
+      // Successful verification and submission
+      if (errorDiv) {
+        errorDiv.style.display = "none";
+        errorDiv.textContent = "";
+      }
+      if (input) input.style.borderColor = "#10b981";
+      if (successDiv) {
+        successDiv.style.display = "block";
+        form.reset();
+        generateCaptcha();
+        successDiv.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+      return false;
+    }, true);
+  }
+})();
 </script>
-<script id="google-recaptcha-js" src="https://www.google.com/recaptcha/api.js?hl=en_US&#038;onload=recaptchaCallback&#038;render=explicit&#038;ver=2.0"></script>
 <script id="elementor-pro-webpack-runtime-js" src="/assets/content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.17.1"></script>
 <script id="elementor-pro-frontend-js-before">
 var ElementorProFrontendConfig = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce":"10748f738b","urls":{"assets":"\/assets\/content\/plugins\/elementor-pro\/assets\/","rest":"\/assets\/json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"\/assets\/content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
