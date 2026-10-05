@@ -1,0 +1,17 @@
+{
+  "name": "talk-digital-website-clone",
+  "version": "1.0.0",
+  "description": "Complete exact clone of all pages from https://www.talkdigital.co.in",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "talkdigital",
+    "website",
+    "clone",
+    "static-site"
+  ],
+  "author": "",
+  "license": "ISC"
+}
